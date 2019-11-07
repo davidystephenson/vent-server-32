@@ -12,6 +12,7 @@ router.get('/vent', (request, response, next) => {
 })
 
 router.post('/vent', (request, response, next) => {
+  console.log('request.body test:', request.body)
   Vent
     .create(request.body)
     .then(vent => response.send(vent))
