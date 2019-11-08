@@ -14,7 +14,7 @@ app.use(corsMiddleware)
 
 app.use(ventRouter)
 
-const port = 4000
+const port = process.env.PORT || 4000
 
 function onListen () {
   console.log(`Listening on :${port}`)
