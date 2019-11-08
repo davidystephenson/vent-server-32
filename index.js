@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+const userRouter = require('./user/router')
 const ventRouter = require('./vent/router')
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(jsonParser)
 const corsMiddleware = cors()
 app.use(corsMiddleware)
 
+app.use(userRouter)
 app.use(ventRouter)
 
 const port = process.env.PORT || 4000
